@@ -3,37 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>จุฬาลักษณ์ จิตรจะโปะ</title>
+    <title>My Portfolio</title>
     <style>
+        /* ตั้งค่าพื้นหลังและฟอนต์ */
         body {
+            background-color: #FFF9C4; /* สีเหลืองอ่อน */
+            color: #333333; /* สีข้อความปกติ */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #BC8FD0;
-            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* กล่องเนื้อหาหลัก */
+        .portfolio-container {
+            background-color: #FFFFFF; /* พื้นหลังกล่องสีขาว */
+            border: 4px solid #D32F2F; /* ขอบสีแดง */
+            border-radius: 15px; /* มุมโค้งมน */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* เงา */
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
             text-align: center;
-            padding: 50px;
         }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 0px;
+
+        /* สไตล์สำหรับรูปโปรไฟล์ */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+            object-fit: cover;
+            border: 5px solid #FFC107; /* ขอบรูปสีเหลือง */
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 0 auto;
         }
-        h1 { color: #2c3e50; }
-        p { font-size: 18px; line-height: 1.6; }
+
+        /* ชื่อ */
+        h1 {
+            color: #D32F2F; /* ชื่อสีแดง */
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* กล่องเก็บข้อมูลส่วนตัว */
+        .info-box {
+            text-align: left;
+            background-color: #FFECB3; /* พื้นหลังข้อมูลสีเหลืองทอง */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid #D32F2F; /* แถบซ้ายสีแดง */
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* สไตล์ปุ่มกด */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #D32F2F; /* ปุ่มสีแดง */
+            color: #FFEB3B; /* ตัวหนังสือบนปุ่มสีเหลือง */
+            text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* เวลาเอาเมาส์ไปชี้ที่ปุ่ม */
+        .btn:hover {
+            background-color: #B71C1C; /* แดงเข้มขึ้น */
+            transform: scale(1.05); /* ขยายปุ่มนิดหน่อย */
+        }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน 👋</h1>
-        <p>สวัสดีค่า! ดิฉันชื่อ <strong>จุฬาลักษณ์ (Julalak)</strong></p>
-        <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-        <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-        โค้ดปุ่ม
-<a href="portfolio.html" style="display:inline-block; background:#3498db; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:15px;">👉 ดูแฟ้มสะสมงานของฉัน</a>
+    <div class="portfolio-container">
+        <!-- เปลี่ยนชื่อไฟล์รูปตรง src ให้ตรงกับรูปที่คุณอัปโหลดลง GitHub -->
+        <img src="profile.jpg" alt="รูปโปรไฟล์" class="profile-pic">
+        
+        <!-- ชื่อของคุณ -->
+        <h1>ชื่อ - นามสกุล</h1>
 
+        <div class="info-box">
+            <p><strong>🎂 วันเกิด:</strong> 1 มกราคม 2540</p>
+            <p><strong>🎓 ประวัติการศึกษา:</strong> ปริญญาตรี คณะ... มหาวิทยาลัย...</p>
+            <p><strong>💡 สนใจด้าน:</strong> การพัฒนาเว็บไซต์, กราฟิกดีไซน์, การตลาดออนไลน์</p>
+            <p><strong>🎮 งานอดิเรก:</strong> ถ่ายภาพ, อ่านหนังสือ, ฟังเพลง, เขียนบล็อก</p>
+            <p><strong>🌟 จุดเด่น:</strong> เรียนรู้สิ่งใหม่ได้เร็ว, มีความรับผิดชอบ, ทำงานร่วมกับผู้อื่นได้ดี</p>
+        </div>
+
+        <!-- ปุ่มกดไปหน้าถัดไป (เปลี่ยน page2.html เป็นชื่อไฟล์หน้าที่สองของคุณ) -->
+        <a href="page2.html" class="btn">ดูผลงานของฉัน ➔</a>
     </div>
 
 </body>
