@@ -64,18 +64,32 @@
             padding: 35px 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             border: 3px solid #FFC107;
+            text-align: center;
         }
 
         .page-header {
-            text-align: center;
             color: #D32F2F;
             font-size: 28px;
             margin-top: 0;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+        }
+
+        /* รูปโปรไฟล์ในหน้าเกี่ยวกับฉัน */
+        .profile-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #FFC107;
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.2);
         }
 
         /* การ์ดแต่ละหัวข้อ สไตล์ตั๋วหนัง/ฟิล์ม */
@@ -83,6 +97,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            text-align: left;
         }
 
         .info-card {
@@ -109,7 +124,7 @@
         }
 
         .info-card p {
-            margin: 0;
+            margin: 4px 0;
             color: #424242;
             font-size: 16px;
             font-weight: 300;
@@ -156,11 +171,11 @@
 </head>
 <body>
 
-    <!-- แถบเมนูด้านบน -->
+    <!-- แถบเมนูด้านบน (แก้ชื่อไฟล์ลิงก์ให้ตรงกันทุกหน้า) -->
     <nav class="navbar">
         <a href="index.html" class="nav-item">🎬 Home</a>
         <a href="about.html" class="nav-item active">🎥 About Me</a>
-        <a href="works.html" class="nav-item">🎞️ Portfolio</a>
+        <a href="portfolio.html" class="nav-item">🎞️ Portfolio</a>
         <a href="contact.html" class="nav-item">📞 Contact</a>
     </nav>
 
@@ -169,32 +184,38 @@
         
         <h2 class="page-header">🎥 ประวัติส่วนตัว (About Me)</h2>
 
+        <!-- ส่วนใส่รูปโปรไฟล์ -->
+        <div class="profile-wrapper">
+            <!-- เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปของคุณ -->
+            <img src="profile.jpg" alt="รูปจุฬาลักษณ์" class="profile-img">
+        </div>
+
         <div class="info-grid">
             
             <div class="info-card">
                 <h3>🎟️ ข้อมูลส่วนตัว</h3>
                 <p><strong>ชื่อ-นามสกุล:</strong> นางสาวจุฬาลักษณ์ จิตรจะโปะ ( Julalak Jitjapo )</p>
-                <p><strong>วันเกิด:</strong> [18 มิถุนายน 2552]</p>
+                <p><strong>วันเกิด:</strong> 18 มิถุนายน 2552</p>
             </div>
 
             <div class="info-card">
                 <h3>🎓 ประวัติการศึกษา</h3>
-                <p>โรงเรียน [บ้านบึงอุตสาหกรรมนุเคราะห์ แผนการเรียนภาษาจีน]</p>
+                <p>โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ (แผนการเรียนภาษาจีน)</p>
             </div>
 
             <div class="info-card">
                 <h3>💡 ด้านที่สนใจ (Special Interests)</h3>
-                <p>การกำกับภาพยนตร์, การตัดต่อวิดีโอ (Video Editing), สื่อสร้างสรรค์ดิจิทัล และการเขียนบท</p>
+                <p>การกำกับภาพยนตร์,การตัดต่อวิดีโอ (Video Editing),สื่อสร้างสรรค์ดิจิทัลและการเขียนบท</p>
             </div>
 
             <div class="info-card">
                 <h3>🍿 งานอดิเรก</h3>
-                <p>ดูหนังอินดี้, ถ่ายภาพกล้องฟิล์ม, ฟังเพลงคอนเสิร์ต, ฟัง Podcast งานเบื้องหลังภาพยนตร์</p>
+                <p>ดูซีรีส์,ฟังเพลง,อ่านนิยาย,เล่นเกม</p>
             </div>
 
             <div class="info-card">
                 <h3>🌟 จุดเด่นและความสามารถพิเศษ</h3>
-                <p>มีความคิดสร้างสรรค์สูง, เข้าใจองค์ประกอบศิลป์และการเล่าเรื่องผ่านภาพ (Visual Storytelling), ทำงานเป็นทีมดีเยี่ยม</p>
+                <p>มีความคิดสร้างสรรค์สูง,มีทักษะการทำงานเป็นทีม,มีความเป็นผู้นำ,ร้องเพลงและเต้นได้</p>
             </div>
 
         </div>
@@ -202,7 +223,7 @@
         <!-- ปุ่มกดเปลี่ยนหน้าด้านล่าง -->
         <div class="page-navigation">
             <a href="index.html" class="nav-btn btn-prev">⬅️ ย้อนไปหน้าแรก</a>
-            <a href="porfolio.html" class="nav-btn btn-next">ดูผลงาน ➔</a>
+            <a href="portfolio.html" class="nav-btn btn-next">ดูผลงาน ➔</a>
         </div>
 
     </div>
