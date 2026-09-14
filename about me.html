@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับฉัน - Julalak Portfolio</title>
+    <!-- นำเข้าฟอนต์ Mitr -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 50%, #FFEBEE 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* เมนูด้านบน */
+        .navbar {
+            display: flex;
+            gap: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.12);
+            margin-bottom: 30px;
+            border: 2px solid #FFD54F;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #5D4037;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+        }
+
+        /* คอนเทนเนอร์ประวัติส่วนตัว */
+        .about-container {
+            max-width: 650px;
+            width: 100%;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 3px solid #FFC107;
+        }
+
+        .page-header {
+            text-align: center;
+            color: #D32F2F;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* การ์ดแต่ละหัวข้อ สไตล์ตั๋วหนัง/ฟิล์ม */
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-card {
+            background-color: #FFFDE7;
+            border: 1px solid #FFE082;
+            border-left: 6px solid #D32F2F;
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .info-card:hover {
+            transform: translateX(4px);
+        }
+
+        .info-card h3 {
+            margin: 0 0 6px 0;
+            color: #C62828;
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: #424242;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* กลุ่มปุ่มกดย้อนกลับ / ไปหน้าถัดไป */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-prev {
+            background-color: #FFF3E0;
+            color: #D32F2F;
+            border: 2px solid #FFB74D;
+        }
+
+        .btn-prev:hover {
+            background-color: #FFE082;
+        }
+
+        .btn-next {
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            border: 2px solid #FFC107;
+        }
+
+        .btn-next:hover {
+            background-color: #B71C1C;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">🎬 หน้าแรก</a>
+        <a href="about.html" class="nav-item active">🎥 เกี่ยวกับฉัน</a>
+        <a href="works.html" class="nav-item">🎞️ ผลงาน</a>
+        <a href="contact.html" class="nav-item">📞 ติดต่อ</a>
+    </nav>
+
+    <!-- เนื้อหาประวัติส่วนตัว -->
+    <div class="about-container">
+        
+        <h2 class="page-header">🎥 ประวัติส่วนตัว (About Me)</h2>
+
+        <div class="info-grid">
+            
+            <div class="info-card">
+                <h3>🎟️ ข้อมูลส่วนตัว</h3>
+                <p><strong>ชื่อ-นามสกุล:</strong> นางสาว จุฬาลักษณ์ ( Julalak )</p>
+                <p><strong>วันเกิด:</strong> [ใส่วันเกิดของคุณ]</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🎓 ประวัติการศึกษา</h3>
+                <p>สายการเรียน / สาขานิเทศศาสตร์และการสื่อสารมวลชน [ใส่มหาวิทยาลัย/โรงเรียนของคุณ]</p>
+            </div>
+
+            <div class="info-card">
+                <h3>💡 ด้านที่สนใจ (Special Interests)</h3>
+                <p>การกำกับภาพยนตร์, การตัดต่อวิดีโอ (Video Editing), สื่อสร้างสรรค์ดิจิทัล และการเขียนบท</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🍿 งานอดิเรก</h3>
+                <p>ดูหนังอินดี้, ถ่ายภาพกล้องฟิล์ม, ฟังเพลงคอนเสิร์ต, ฟัง Podcast งานเบื้องหลังภาพยนตร์</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌟 จุดเด่นและความสามารถพิเศษ</h3>
+                <p>มีความคิดสร้างสรรค์สูง, เข้าใจองค์ประกอบศิลป์และการเล่าเรื่องผ่านภาพ (Visual Storytelling), ทำงานเป็นทีมดีเยี่ยม</p>
+            </div>
+
+        </div>
+
+        <!-- ปุ่มกดเปลี่ยนหน้าด้านล่าง -->
+        <div class="page-navigation">
+            <a href="index.html" class="nav-btn btn-prev">⬅️ ย้อนไปหน้าแรก</a>
+            <a href="works.html" class="nav-btn btn-next">ดูผลงาน ➔</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
