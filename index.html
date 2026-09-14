@@ -3,151 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- นำเข้าฟอนต์ Sarabun ให้ดูทางการและอ่านง่าย -->
+    <title>Julalak Portfolio</title>
+    <!-- นำเข้าฟอนต์ Mitr (น่ารัก สุภาพ อ่านง่าย) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* ตั้งค่าพื้นหลังและฟอนต์หลัก */
+        * {
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+        }
+
         body {
-            background-color: #FFFDE7; /* สีเหลืองนวลอ่อนๆ */
-            color: #212121;
-            font-family: 'Sarabun', sans-serif; /* ฟอนต์ทางการ */
+            /* พื้นหลังไล่เฉดสีเหลืองนวลอมส้ม ให้ความรู้สึกเหมือนแสงไฟโรงภาพยนตร์ */
+            background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 50%, #FFEBEE 100%);
             margin: 0;
-            padding: 40px 15px;
+            padding: 20px;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* เมนูด้านบน (Navigation Bar) สไตล์แคปซูลแบบในรูปตัวอย่าง */
+        .navbar {
+            display: flex;
+            gap: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.12);
+            margin-bottom: 30px;
+            border: 2px solid #FFD54F;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
-        /* กล่องเนื้อหาหลัก */
-        .portfolio-container {
-            background-color: #FFFFFF;
-            border: 3px solid #D32F2F; /* ขอบสีแดง */
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            padding: 40px 30px;
+        .nav-item {
+            text-decoration: none;
+            color: #5D4037;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #D32F2F; /* สีแดง */
+            color: #FFFFFF;
+            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+        }
+
+        /* ส่วนเนื้อหาหลักกลางหน้า */
+        .main-container {
+            text-align: center;
             max-width: 650px;
             width: 100%;
-            text-align: center;
+            padding: 20px;
         }
 
-        /* ปรับขนาดรูปโปรไฟล์ให้ใหญ่ขึ้น (220px) */
-        .profile-pic {
-            width: 220px;
-            height: 220px;
+        /* หัวข้อ Julalak Portfolio สไตล์ป้ายภาพยนตร์ */
+        .portfolio-title {
+            color: #D32F2F;
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px #FFC107;
+            letter-spacing: 1px;
+        }
+
+        /* กรอบรูปถ่าย สไตล์วงกลมมีซ้อนวงแหวนตกแต่ง */
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 210px;
+            height: 210px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #FFC107; /* ขอบสีเหลืองทอง */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border: 6px solid #FFC107; /* ขอบสีเหลืองทอง */
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
+            background-color: #FFF;
         }
 
-        /* ชื่อ */
-        h1 {
-            color: #C62828; /* สีแดงเข้มทางการ */
-            margin-top: 20px;
-            margin-bottom: 25px;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
-        /* โครงสร้างจัดวางช่องข้อความ */
-        .info-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px; /* ระยะห่างระหว่างแต่ละช่อง */
-            text-align: left;
-        }
-
-        /* สไตล์ของแต่ละช่องข้อความ (การ์ดหัวข้อ) */
-        .info-card {
-            background-color: #FFF8E1; /* พื้นหลังช่องสีเหลืองอ่อน */
-            border: 1px solid #FFE082;
-            border-left: 6px solid #D32F2F; /* แถบสีแดงด้านซ้าย */
-            border-radius: 8px;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .info-card h3 {
-            margin: 0 0 6px 0;
-            color: #B71C1C; /* หัวข้อสีแดง */
-            font-size: 18px;
+        /* ข้อความต้อนรับ */
+        .welcome-title {
+            color: #C62828;
+            font-size: 24px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
-        .info-card p {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+        .welcome-desc {
+            color: #4E342E;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-weight: 300;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px stroke #FFE082;
         }
 
-        /* ปุ่มกดไปหน้าถัดไป */
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background-color: #D32F2F; /* ปุ่มสีแดง */
+        /* ปุ่มกดไปหน้าประวัติ */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #D32F2F;
             color: #FFFFFF;
             text-decoration: none;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 30px;
             font-size: 18px;
-            font-weight: 600;
-            border: 2px solid #FFC107; /* ขอบปุ่มสีเหลือง */
+            font-weight: 500;
+            border: 3px solid #FFC107;
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
             transition: all 0.3s ease;
         }
 
-        .btn:hover {
+        .cta-btn:hover {
             background-color: #B71C1C;
-            border-color: #FFD54F;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
         }
     </style>
 </head>
 <body>
 
-    <div class="portfolio-container">
-        <!-- รูปโปรไฟล์ใหญ่ขึ้น -->
-        <img src="profile.jpg" alt="รูปโปรไฟล์" class="profile-pic">
+    <!-- แถบเมนูด้านบน (สไตล์เดียวกับรูปตัวอย่าง) -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item active">🎬 หน้าแรก</a>
+        <a href="about.html" class="nav-item">🎥 เกี่ยวกับฉัน</a>
+        <a href="works.html" class="nav-item">🎞️ ผลงาน</a>
+        <a href="contact.html" class="nav-item">📞 ติดต่อ</a>
+    </nav>
+
+    <!-- เนื้อหาหน้าแรก -->
+    <div class="main-container">
         
-        <!-- ชื่อของคุณ -->
-        <h1>นางสาวจุฬาลักษณ์ จิตรจะโปะ</h1>
-        <h1>Julalak Jitjapo</h1>
+        <!-- ชื่อ Portfolio -->
+        <h1 class="portfolio-title">🎬 Julalak Portfolio 🍿✨</h1>
 
-        <!-- รวมช่องข้อความแต่ละหัวข้อ -->
-        <div class="info-grid">
-            
-            <div class="info-card">
-                <h3>🎂 Birth Day</h3>
-                <p>18 June 2009</p>
-            </div>
-
-            <div class="info-card">
-                <h3>🎓 ประวัติการศึกษา</h3>
-                <p>โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ แผนการเรียนภาษาจีน</p>
-            </div>
-
-            <div class="info-card">
-                <h3>💡 ความสนใจ</h3>
-                <p>การผลิตสื่อ สารสนเทศ </p>
-            </div>
-
-            <div class="info-card">
-                <h3>🎮 งานอดิเรก</h3>
-                <p>อ่านหนังสือวิชาการ, ถ่ายภาพ, ฝึกเขียนโปรแกรม</p>
-            </div>
-
-            <div class="info-card">
-                <h3>🌟 จุดเด่น</h3>
-                <p>มีความรับผิดชอบสูง, แก้ไขปัญหาเฉพาะหน้าได้ดี, ทำงานเป็นทีมได้อย่างมีประสิทธิภาพ</p>
-            </div>
-
+        <!-- ที่ใส่รูปโปรไฟล์ -->
+        <div class="profile-wrapper">
+            <img src="profile.jpg" alt="รูปของจุฬาลักษณ์" class="profile-img">
         </div>
 
-        <!-- ปุ่มกดไปหน้าถัดไป -->
-        <a href="page2.html" class="btn">เข้าชมผลงาน (Portfolio) ➔</a>
+        <!-- ข้อความทักทาย -->
+        <h2 class="welcome-title">สวัสดีค่ะ! 👋✨</h2>
+        
+        <p class="welcome-desc">
+            ยินดีต้อนรับสู่แฟ้มสะสมผลงานของฉัน<br>
+            มารู้จักตัวตนของฉันเพิ่มมากขึ้นกันเถอะ! 🎬🍿
+        </p>
+
+        <!-- ปุ่มกดไปหน้าประวัติส่วนตัว -->
+        <a href="about.html" class="cta-btn">
+            🎥 มารู้จักกับฉันกันค่ะ ➔
+        </a>
+
     </div>
 
 </body>
