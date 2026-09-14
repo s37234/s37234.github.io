@@ -1,2 +1,178 @@
-# s37234.github.io
-welcome to แฟ้มสะสมผลงาน Julalak
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julalak Portfolio</title>
+    <!-- นำเข้าฟอนต์ Mitr (น่ารัก สุภาพ อ่านง่าย) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        body {
+            /* พื้นหลังไล่เฉดสีเหลืองนวลอมส้ม ให้ความรู้สึกเหมือนแสงไฟโรงภาพยนตร์ */
+            background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 50%, #FFEBEE 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* เมนูด้านบน (Navigation Bar) สไตล์แคปซูลแบบในรูปตัวอย่าง */
+        .navbar {
+            display: flex;
+            gap: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.12);
+            margin-bottom: 30px;
+            border: 2px solid #FFD54F;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #5D4037;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #D32F2F; /* สีแดง */
+            color: #FFFFFF;
+            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+        }
+
+        /* ส่วนเนื้อหาหลักกลางหน้า */
+        .main-container {
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* หัวข้อ Julalak Portfolio สไตล์ป้ายภาพยนตร์ */
+        .portfolio-title {
+            color: #D32F2F;
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px #FFC107;
+            letter-spacing: 1px;
+        }
+
+        /* กรอบรูปถ่าย สไตล์วงกลมมีซ้อนวงแหวนตกแต่ง */
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #FFC107; /* ขอบสีเหลืองทอง */
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
+            background-color: #FFF;
+        }
+
+        /* ข้อความต้อนรับ */
+        .welcome-title {
+            color: #C62828;
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .welcome-desc {
+            color: #4E342E;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-weight: 300;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px stroke #FFE082;
+        }
+
+        /* ปุ่มกดไปหน้าประวัติ */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            border: 3px solid #FFC107;
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #B71C1C;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- แถบเมนูด้านบน (สไตล์เดียวกับรูปตัวอย่าง) -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item active">🎬 หน้าแรก</a>
+        <a href="about.html" class="nav-item">🎥 เกี่ยวกับฉัน</a>
+        <a href="works.html" class="nav-item">🎞️ ผลงาน</a>
+        <a href="contact.html" class="nav-item">📞 ติดต่อ</a>
+    </nav>
+
+    <!-- เนื้อหาหน้าแรก -->
+    <div class="main-container">
+        
+        <!-- ชื่อ Portfolio -->
+        <h1 class="portfolio-title">🎬 Julalak Portfolio 🍿✨</h1>
+
+        <!-- ที่ใส่รูปโปรไฟล์ -->
+        <div class="profile-wrapper">
+            <img src="profile.jpg" alt="รูปของจุฬาลักษณ์" class="profile-img">
+        </div>
+
+        <!-- ข้อความทักทาย -->
+        <h2 class="welcome-title">สวัสดีค่ะ! 👋✨</h2>
+        
+        <p class="welcome-desc">
+            ยินดีต้อนรับสู่แฟ้มสะสมผลงานของฉัน<br>
+            มารู้จักตัวตนของฉันเพิ่มมากขึ้นกันเถอะ! 🎬🍿
+        </p>
+
+        <!-- ปุ่มกดไปหน้าประวัติส่วนตัว -->
+        <a href="about.html" class="cta-btn">
+            🎥 มารู้จักกับฉันกันค่ะ ➔
+        </a>
+
+    </div>
+
+</body>
+</html>
