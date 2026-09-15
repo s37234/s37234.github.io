@@ -16,6 +16,7 @@
         }
 
         body {
+            /* พื้นหลังไล่เฉดสีนวลอมส้มแดง สไตล์โรงภาพยนตร์ */
             background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 50%, #FFEBEE 100%);
             margin: 0;
             padding: 20px;
@@ -57,7 +58,7 @@
 
         /* คอนเทนเนอร์ประวัติส่วนตัว */
         .about-container {
-            max-width: 650px;
+            max-width: 680px;
             width: 100%;
             background-color: #FFFFFF;
             border-radius: 20px;
@@ -76,9 +77,10 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            text-shadow: 1px 1px 0px #FFE082;
         }
 
-        /* รูปโปรไฟล์ในหน้าเกี่ยวกับฉัน */
+        /* รูปโปรไฟล์ทรงวงกลม */
         .profile-wrapper {
             margin-bottom: 25px;
         }
@@ -88,15 +90,17 @@
             height: 170px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: center 15%;
             border: 5px solid #FFC107;
             box-shadow: 0 6px 15px rgba(211, 47, 47, 0.2);
+            background-color: #FFF;
         }
 
-        /* การ์ดแต่ละหัวข้อ สไตล์ตั๋วหนัง/ฟิล์ม */
+        /* การ์ดแต่ละหัวข้อ สไตล์ฟิล์ม/ตั๋วภาพยนตร์ */
         .info-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
             text-align: left;
         }
 
@@ -104,29 +108,46 @@
             background-color: #FFFDE7;
             border: 1px solid #FFE082;
             border-left: 6px solid #D32F2F;
-            border-radius: 12px;
-            padding: 16px 20px;
-            transition: transform 0.2s ease;
+            border-radius: 14px;
+            padding: 18px 22px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .info-card:hover {
             transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1);
+        }
+
+        /* การ์ดเน้นพิเศษสำหรับเป้าหมายคณะนิเทศศาสตร์ */
+        .info-card.highlight-card {
+            background-color: #FFEBEE;
+            border: 2px solid #FFCDD2;
+            border-left: 6px solid #B71C1C;
         }
 
         .info-card h3 {
-            margin: 0 0 6px 0;
+            margin: 0 0 8px 0;
             color: #C62828;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 19px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .info-card p {
-            margin: 4px 0;
+            margin: 5px 0;
             color: #424242;
             font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .info-card ul {
+            margin: 6px 0 0 0;
+            padding-left: 20px;
+            color: #424242;
+            font-size: 15px;
             font-weight: 300;
             line-height: 1.6;
         }
@@ -135,7 +156,7 @@
         .page-navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            margin-top: 32px;
             gap: 15px;
         }
 
@@ -171,7 +192,7 @@
 </head>
 <body>
 
-    <!-- แถบเมนูด้านบน (แก้ชื่อไฟล์ลิงก์ให้ตรงกันทุกหน้า) -->
+    <!-- แถบเมนูด้านบน -->
     <nav class="navbar">
         <a href="index.html" class="nav-item">🎬 Home</a>
         <a href="about.html" class="nav-item active">🎥 About Me</a>
@@ -186,36 +207,51 @@
 
         <!-- ส่วนใส่รูปโปรไฟล์ -->
         <div class="profile-wrapper">
-            <!-- เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปของคุณ -->
-            <img src="AC64AB0E-576D-4481-B0A1-775F7D1E486C.jpeg" alt="รูปจุฬาลักษณ์" class="AC64AB0E-576D-4481-B0A1-775F7D1E486C.jpeg">
+            <img src="AC64AB0E-576D-4481-B0A1-775F7D1E486C.jpeg" alt="รูปจุฬาลักษณ์" class="profile-img">
         </div>
 
         <div class="info-grid">
             
+            <!-- 1. ข้อมูลส่วนตัว -->
             <div class="info-card">
-                <h3>🎟️ ข้อมูลส่วนตัว</h3>
-                <p><strong>ชื่อ-นามสกุล:</strong> นางสาวจุฬาลักษณ์ จิตรจะโปะ ( Julalak Jitjapo )</p>
+                <h3>🎟️ 1. ข้อมูลส่วนตัว</h3>
+                <p><strong>ชื่อ-นามสกุล:</strong> นางสาวจุฬาลักษณ์ จิตรจะโปะ (Julalak Jitjapo)</p>
                 <p><strong>วันเกิด:</strong> 18 มิถุนายน 2552</p>
             </div>
 
+            <!-- 2. ประวัติการศึกษา -->
             <div class="info-card">
-                <h3>🎓 ประวัติการศึกษา</h3>
-                <p>โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ (แผนการเรียนภาษาจีน)</p>
+                <h3>🎓 2. ประวัติการศึกษา</h3>
+                <p><strong>โรงเรียน:</strong> โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์</p>
+                <p><strong>แผนการเรียน:</strong> ภาษาจีน 🇨🇳</p>
             </div>
 
+            <!-- 3. จุดเด่น ความสามารถพิเศษ และงานอดิเรก -->
             <div class="info-card">
-                <h3>💡 ด้านที่สนใจ (Special Interests)</h3>
-                <p>การกำกับภาพยนตร์,การตัดต่อวิดีโอ (Video Editing),สื่อสร้างสรรค์ดิจิทัลและการเขียนบท</p>
+                <h3>🌟 3. จุดเด่น ความสามารถพิเศษ & งานอดิเรก</h3>
+                <p><strong>จุดเด่น & ความสามารถพิเศษ:</strong></p>
+                <ul>
+                    <li>มีความคิดสร้างสรรค์สูง กล้าคิดกล้าแสดงออก</li>
+                    <li>มีทักษะการทำงานเป็นทีม และมีความเป็นผู้นำ</li>
+                    <li>มีความสามารถด้านการร้องเพลงและการเต้น 🎤💃</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>งานอดิเรก:</strong> ดูซีรีส์, ฟังเพลง, อ่านนิยาย, เล่นเกม 🍿🎮</p>
             </div>
 
-            <div class="info-card">
-                <h3>🍿 งานอดิเรก</h3>
-                <p>ดูซีรีส์,ฟังเพลง,อ่านนิยาย,เล่นเกม</p>
+            <!-- 4. คณะและมหาวิทยาลัยที่อยากเข้า -->
+            <div class="info-card highlight-card">
+                <h3>🎥 4. คณะและมหาวิทยาลัยที่อยากเข้า</h3>
+                <p><strong>คณะที่มุ่งหวัง:</strong> คณะวารสารศาตร์และสื่อสารมวลชน🎬</p>
+                <p><strong>สาขาที่สนใจ:</strong> ภาพยนตร์และภาพถ่าย (Film & Digital Media)</p>
+                <p><strong>มหาวิทยาลัยเป้าหมาย:</strong> มหาวิทยาลัยธรรมศาตร์มา </p>
             </div>
 
-            <div class="info-card">
-                <h3>🌟 จุดเด่นและความสามารถพิเศษ</h3>
-                <p>มีความคิดสร้างสรรค์สูง,มีทักษะการทำงานเป็นทีม,มีความเป็นผู้นำ,ร้องเพลงและเต้นได้</p>
+            <!-- 5. เหตุผลที่อยากเข้าคณะนี้ -->
+            <div class="info-card highlight-card">
+                <h3>🎬 5. เหตุผลที่อยากเข้าคณะนิเทศศาสตร์</h3>
+                <p>
+                    มีความหลงใหลในศิลปะการเล่าเรื่องผ่านภาพและเสียง อยากนำความรู้ด้านการกำกับ การเขียนบท และการตัดต่อมาสร้างสรรค์สื่อที่มีคุณภาพ พร้อมทั้งผสานทักษะภาษาจีนและบุคลิกภาพที่มั่นใจ เพื่อก้าวสู่การเป็นบุคลากรเบื้องหลังและเบื้องหน้าที่ขับเคลื่อนอุตสาหกรรมสื่อสร้างสรรค์ต่อไปค่ะ ✨🍿
+                </p>
             </div>
 
         </div>
