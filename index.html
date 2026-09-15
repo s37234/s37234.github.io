@@ -77,29 +77,21 @@
             letter-spacing: 1px;
         }
 
-        /* กรอบรูปถ่าย สไตล์วงกลมมีซ้อนวงแหวนตกแต่ง */
+        /* กรอบรูปถ่าย */
         .profile-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 25px;
         }
 
+        /* 🟢 โค้ดที่แก้ให้รูปเป็นวงกลม 🟢 */
         .profile-img {
-    width: 20px;   /* 👈 ปรับลดความกว้างตรงนี้ (ลองปรับเป็น 130px - 150px) */
-    height: 20px;  /* 👈 ปรับให้เท่ากับความกว้างเพื่อให้เป็นวงกลม */
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 20%; /* ช่วยขยับรูปขึ้นลงให้เห็นหน้าชัดขึ้น */
-    border: 4px solid #FFC107;
-    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.2);
-}
-
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #FFC107; /* ขอบสีเหลืองทอง */
+            width: 180px;        /* ความกว้างของรูป */
+            height: 180px;       /* ความสูง (ตั้งให้เท่ากับความกว้างจะเป็นวงกลม) */
+            border-radius: 50%;  /* คำสั่งเปลี่ยนรูปเป็นวงกลม */
+            object-fit: cover;   /* ทำให้รูปไม่เบี้ยว */
+            object-position: center 15%; /* ดันรูปให้เห็นช่วงหน้าชัดขึ้น */
+            border: 5px solid #FFC107; /* ขอบสีเหลือง */
             box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
             background-color: #FFF;
         }
@@ -121,7 +113,7 @@
             background-color: rgba(255, 255, 255, 0.7);
             padding: 15px 25px;
             border-radius: 15px;
-            border: 1px stroke #FFE082;
+            border: 1px solid #FFE082;
         }
 
         /* ปุ่มกดไปหน้าประวัติ */
@@ -150,11 +142,11 @@
 </head>
 <body>
 
-    <!-- แถบเมนูด้านบน (สไตล์เดียวกับรูปตัวอย่าง) -->
+    <!-- แถบเมนูด้านบน -->
     <nav class="navbar">
         <a href="index.html" class="nav-item active">🎬 Home</a>
         <a href="about.html" class="nav-item">🎥 About Me</a>
-        <a href="works.html" class="nav-item">🎞️ Portfolio</a>
+        <a href="portfolio.html" class="nav-item">🎞️ Portfolio</a>
         <a href="contact.html" class="nav-item">📞 Contact</a>
     </nav>
 
@@ -164,9 +156,9 @@
         <!-- ชื่อ Portfolio -->
         <h1 class="portfolio-title">🎬 Julalak's Portfolio 🍿✨</h1>
 
-        <!-- ที่ใส่รูปโปรไฟล์ -->
+        <!-- ที่ใส่รูปโปรไฟล์ (🟢 แก้ไข class ให้ถูกต้องแล้ว 🟢) -->
         <div class="profile-wrapper">
-            <img src="1FBD7AA3-095F-4C43-B196-BE113866E85C.jpeg" alt="รูปของจุฬาลักษณ์" class="1FBD7AA3-095F-4C43-B196-BE113866E85C.jpeg">
+            <img src="1FBD7AA3-095F-4C43-B196-BE113866E85C.jpg" alt="รูปของจุฬาลักษณ์" class="profile-img">
         </div>
 
         <!-- ข้อความทักทาย -->
