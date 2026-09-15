@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Julalak Portfolio</title>
+    <!-- นำเข้าฟอนต์ Mitr -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFFDE7 0%, #FFF3E0 50%, #FFEBEE 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* เมนูด้านบน */
+        .navbar {
+            display: flex;
+            gap: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.12);
+            margin-bottom: 30px;
+            border: 2px solid #FFD54F;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #5D4037;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+        }
+
+        /* คอนเทนเนอร์หลักของหน้าติดต่อ */
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 3px solid #FFC107;
+            text-align: center;
+        }
+
+        .page-header {
+            color: #D32F2F;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 0px #FFE082;
+        }
+
+        .page-subtitle {
+            color: #616161;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* กล่องข้อความขอบคุณความประทับใจ */
+        .thank-you-box {
+            background-color: #FFFDE7;
+            border: 2px dashed #FFB74D;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .thank-you-title {
+            color: #B71C1C;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .thank-you-text {
+            color: #424242;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* การจัดวางช่องทางติดต่อ (Grid 3 กล่อง) */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .contact-card {
+            background-color: #FFFFFF;
+            border: 2px solid #FFE082;
+            border-radius: 16px;
+            padding: 22px 15px;
+            text-decoration: none;
+            color: #5D4037;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #D32F2F;
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.15);
+            background-color: #FFF3E0;
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .contact-type {
+            font-size: 14px;
+            color: #757575;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .contact-detail {
+            font-size: 16px;
+            color: #B71C1C;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        /* ทิ้งท้ายสร้างแรงบันดาลใจ */
+        .quote-box {
+            color: #5D4037;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: 300;
+            margin-bottom: 30px;
+            padding: 10px;
+            border-top: 1px solid #FFE082;
+            border-bottom: 1px solid #FFE082;
+        }
+
+        /* ปุ่มกดเปิดทางย้อนกลับ */
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-prev {
+            background-color: #FFF3E0;
+            color: #D32F2F;
+            border: 2px solid #FFB74D;
+        }
+
+        .btn-prev:hover {
+            background-color: #FFE082;
+        }
+
+        .btn-home {
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            border: 2px solid #FFC107;
+        }
+
+        .btn-home:hover {
+            background-color: #B71C1C;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-item">🎬 Home</a>
+        <a href="about.html" class="nav-item">🎥 About Me</a>
+        <a href="portfolio.html" class="nav-item">🎞️ Portfolio</a>
+        <a href="contact.html" class="nav-item active">📞 Contact</a>
+    </nav>
+
+    <!-- คอนเทนเนอร์หลักของหน้าติดต่อ -->
+    <div class="contact-container">
+        
+        <h2 class="page-header">📞 ช่องทางติดต่อ (Contact Me)</h2>
+        <p class="page-subtitle">ยินดีที่ได้รู้จักและพร้อมเปิดรับโอกาสใหม่ๆ เสมอค่ะ ✨</p>
+
+        <!-- ข้อความขอบคุณและทิ้งท้าย -->
+        <div class="thank-you-box">
+            <h3 class="thank-you-title">💖 ขอบคุณที่เข้ามาเยี่ยมชมพอร์ตโฟลิโอของหนูนะคะ</h3>
+            <p class="thank-you-text">
+                ทุกผลงานและกิจกรรมที่ผ่านมาเกิดจากความตั้งใจ ความหลงใหลในสายงานสื่อสารมวลชน และความมุ่งมั่นที่จะพัฒนาตนเองอย่างไม่หยุดยั้ง หากอาจารย์หรือพี่ๆ มีข้อเสนอแนะ โอกาสในการทำกิจกรรม หรือต้องการพูดคุยแลกเปลี่ยนเพิ่มเติม สามารถติดต่อหนูผ่านช่องทางด้านล่างนี้ได้เลยนะคะ ยินดีร่วมงานและเรียนรู้สิ่งใหม่ๆ เสมอค่ะ!
+            </p>
+        </div>
+
+        <!-- รายการช่องทางติดต่อ 3 ช่องทาง -->
+        <div class="contact-grid">
+            
+            <!-- Instagram -->
+            <a href="https://instagram.com/dulxye_" target="_blank" class="contact-card">
+                <div class="contact-icon">📸</div>
+                <div class="contact-type">Instagram</div>
+                <div class="contact-detail">dulxye_</div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:0855502114" class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div class="contact-type">Phone</div>
+                <div class="contact-detail">085-550-2114</div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:jjjitjapo1516@gmail.com" class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-type">Email</div>
+                <div class="contact-detail">jjjitjapo1516@gmail.com</div>
+            </a>
+
+        </div>
+
+        <!-- คำคมทิ้งท้าย -->
+        <div class="quote-box">
+            "Communication is not just about sending messages, but creating connections and inspirations."
+        </div>
+
+        <!-- ปุ่มกดย้อนกลับ / กลับหน้าหลัก -->
+        <div class="page-navigation">
+            <a href="portfolio.html" class="nav-btn btn-prev">⬅️ ย้อนไปหน้าผลงาน</a>
+            <a href="index.html" class="nav-btn btn-home">กลับหน้าหลัก 🏠</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
