@@ -57,7 +57,7 @@
 
         /* คอนเทนเนอร์หลักของหน้าผลงาน */
         .portfolio-container {
-            max-width: 850px;
+            max-width: 900px;
             width: 100%;
             background-color: #FFFFFF;
             border-radius: 20px;
@@ -72,6 +72,7 @@
             font-size: 28px;
             margin-top: 0;
             margin-bottom: 8px;
+            text-shadow: 1px 1px 0px #FFE082;
         }
 
         .page-subtitle {
@@ -81,12 +82,18 @@
             margin-bottom: 30px;
         }
 
-        /* การจัดวางช่องกิจกรรม (Grid) */
+        /* การจัดวางช่องกิจกรรม (Grid 2 คอลัมน์บนจอใหญ่) */
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 22px;
             text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* สไตล์กล่องกิจกรรมแต่ละช่อง */
@@ -104,13 +111,13 @@
         .work-card:hover {
             transform: translateY(-5px);
             border-color: #D32F2F;
-            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.2);
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.18);
         }
 
         /* ช่องใส่รูปภาพกิจกรรม */
         .work-img {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
             border-bottom: 3px solid #FFC107;
             background-color: #FFE082;
@@ -118,10 +125,17 @@
 
         /* กล่องข้อความบรรยายด้านล่างรูป */
         .work-info {
-            padding: 16px;
+            padding: 18px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+        }
+
+        .tag-container {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
         }
 
         .work-tag {
@@ -131,15 +145,25 @@
             font-size: 12px;
             padding: 3px 10px;
             border-radius: 12px;
-            margin-bottom: 8px;
-            width: fit-content;
+            font-weight: 500;
+        }
+
+        .award-tag {
+            display: inline-block;
+            background-color: #FFC107;
+            color: #5D4037;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
         }
 
         .work-title {
             color: #B71C1C;
             font-size: 18px;
             font-weight: 600;
-            margin: 0 0 6px 0;
+            margin: 4px 0 8px 0;
+            line-height: 1.4;
         }
 
         .work-desc {
@@ -202,58 +226,96 @@
     <div class="portfolio-container">
         
         <h2 class="page-header">🎞️ ผลงานและกิจกรรม (My Portfolio)</h2>
-        <p class="page-subtitle">รวมผลงานการทำงาน สื่อสร้างสรรค์ และกิจกรรมที่เข้าร่วม 🍿✨</p>
+        <p class="page-subtitle">รวบรวมประสบการณ์ ประธาน/ผู้นำกิจกรรม และผลงานสร้างสรรค์ 🍿✨</p>
 
-        <!-- ตารางแสดง 5 กิจกรรม -->
+        <!-- แสดง 6 กิจกรรม -->
         <div class="works-grid">
             
-            <!-- กิจกรรมช่องที่ 1 -->
+            <!-- กิจกรรมที่ 1 -->
             <div class="work-card">
-                <img src="work1.jpg" alt="กิจกรรมที่ 1" class="work-img">
+                <img src="work1.jpg" alt="ผู้นำร้องเพลงประสานเสียงภาษาจีน" class="work-img">
                 <div class="work-info">
-                    <span class="work-tag">🎬 Video & Film</span>
-                    <h3 class="work-title">กิจกรรมกำกับและถ่ายทำคลิปวิดีโอ</h3>
-                    <p class="work-desc">ทำหน้าที่เขียนบท วางมุมกล้อง และกำกับภาพในกิจกรรมกลุ่ม นำเสนอผลงานสร้างสรรค์ในชั้นเรียน</p>
+                    <div class="tag-container">
+                        <span class="work-tag">🎤 Singing & Language</span>
+                    </div>
+                    <h3 class="work-title">1. ผู้นำร้องเพลงประสานเสียงภาษาจีน (วันตรุษจีน)</h3>
+                    <p class="work-desc">
+                        ได้รับเลือกให้เป็นผู้นำร้องเพลงประสานเสียงภาษาจีน เนื่องในกิจกรรมวันตรุษจีนของโรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ การทำหน้าที่นี้ช่วยพัฒนาทักษะการคุมเสียง การสื่อสารอารมณ์ และความกล้าแสดงออกต่อหน้าสาธารณชน ซึ่งเป็นพื้นฐานสำคัญอย่างยิ่งต่อการเรียนด้านนิเทศศาสตร์ ไม่ว่าจะเป็นงานพิธีกร การพูดสื่อสารในที่สาธารณะ งานแสดง ตลอดจนการเปิดรับทักษะด้านการสื่อสารข้ามวัฒนธรรม (Cross-cultural Communication) ที่จำเป็นต่อการสร้างสรรค์สื่อในยุคปัจจุบัน
+                    </p>
                 </div>
             </div>
 
-            <!-- กิจกรรมช่องที่ 2 -->
+            <!-- กิจกรรมที่ 2 -->
             <div class="work-card">
-                <img src="work2.jpg" alt="กิจกรรมที่ 2" class="work-img">
+                <img src="work2.jpg" alt="แข่งเต้นวันต้านยาเสพติด" class="work-img">
                 <div class="work-info">
-                    <span class="work-tag">📸 Photography</span>
-                    <h3 class="work-title">กิจกรรมถ่ายภาพบรรยากาศงานโรงเรียน</h3>
-                    <p class="work-desc">เก็บบันทึกภาพบรรยากาศ รวบรวมช่วงเวลาสำคัญและความประทับใจผ่านมุมกล้องภาพพอร์ตเทรต</p>
+                    <div class="tag-container">
+                        <span class="work-tag">💃 Dance Performance</span>
+                        <span class="award-tag">🥉 รองชนะเลิศอันดับ 2</span>
+                    </div>
+                    <h3 class="work-title">2. กิจกรรมแข่งเต้นเนื่องในวันต้านยาเสพติด</h3>
+                    <p class="work-desc">
+                        เข้าร่วมการแข่งขันเต้นรณรงค์ต่อต้านยาเสพติดของโรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ และได้รับรางวัลรองชนะเลิศอันดับที่ 2 การเข้าร่วมกิจกรรมนี้ช่วยพัฒนาทักษะการสื่อสารสารประโยชน์สู่สาธารณะผ่านการแสดง (Performance Communication) การเล่าเรื่องและสร้างความประทับใจทางสายตา ตลอดจนการฝึกระเบียบวินัยและการทำงานร่วมกับทีม ซึ่งสามารถนำไปต่อยอดกับการวางแผนแคมเปญประชาสัมพันธ์และการสร้างสรรค์สื่อเพื่อสังคมในสายงานนิเทศศาสตร์ได้เป็นอย่างดี
+                    </p>
                 </div>
             </div>
 
-            <!-- กิจกรรมช่องที่ 3 -->
+            <!-- กิจกรรมที่ 3 -->
             <div class="work-card">
-                <img src="work3.jpg" alt="กิจกรรมที่ 3" class="work-img">
+                <img src="work3.jpg" alt="BBU Dance Contest" class="work-img">
                 <div class="work-info">
-                    <span class="work-tag">🎨 Graphic Design</span>
-                    <h3 class="work-title">งานออกแบบสื่อประชาสัมพันธ์</h3>
-                    <p class="work-desc">ออกแบบโปสเตอร์และแบนเนอร์ออนไลน์สำหรับการประชาสัมพันธ์กิจกรรม คัดสรรโทนสีและฟอนต์ที่ดึงดูดสายตา</p>
+                    <div class="tag-container">
+                        <span class="work-tag">🏆 Choreographer & Leader</span>
+                        <span class="award-tag">🥉 รองชนะเลิศอันดับ 2</span>
+                    </div>
+                    <h3 class="work-title">3. การแข่งขัน BBU Dance Contest</h3>
+                    <p class="work-desc">
+                        เข้าร่วมแข่งขันเต้นในรายการ BBU Dance Contest วันต้านยาเสพติด ได้รับรางวัลรองชนะเลิศอันดับที่ 2 โดยรับหน้าที่คิดค้นท่าเต้นเองและเป็นผู้สอนท่าเต้นให้กับเพื่อนๆ ในทีม ประสบการณ์นี้ช่วยพัฒนาทักษะความคิดสร้างสรรค์ (Creative Thinking) และการสวมบทบาทผู้กำกับโชว์ (Creative Director) โดยตรง อีกทั้งยังได้ฝึกการบริหารจัดการทีมและการสื่อสารเพื่อถ่ายทอดไอเดียให้ผู้อื่นเข้าใจอย่างชัดเจน ซึ่งตรงกับองค์ความรู้ในสายงานกำกับการแสดง งานโปรดักชัน และการบริหารสื่อสารมวลชน
+                    </p>
                 </div>
             </div>
 
-            <!-- กิจกรรมช่องที่ 4 -->
+            <!-- กิจกรรมที่ 4 -->
             <div class="work-card">
-                <img src="work4.jpg" alt="กิจกรรมที่ 4" class="work-img">
+                <img src="work4.jpg" alt="ผู้นำเชียร์ คณะสีม่วง 2567" class="work-img">
                 <div class="work-info">
-                    <span class="work-tag">🇨🇳 Chinese Club</span>
-                    <h3 class="work-title">กิจกรรมแผนการเรียนภาษาจีน</h3>
-                    <p class="work-desc">ร่วมจัดกิจกรรมแลกเปลี่ยนวัฒนธรรมภาษาจีน กิจกรรมวันสำคัญ และนำเสนอผลงานร่วมกับเพื่อนในสายชั้น</p>
+                    <div class="tag-container">
+                        <span class="work-tag">📣 Cheerleader 2024</span>
+                        <span class="award-tag">🥈 รองชนะเลิศอันดับ 1</span>
+                    </div>
+                    <h3 class="work-title">4. ผู้นำเชียร์ คณะสีม่วง งานกีฬาสี (ปี 2567)</h3>
+                    <p class="work-desc">
+                        ได้รับเลือกให้ทำหน้าที่ผู้นำเชียร์ของคณะสีม่วง ในงานกีฬาสีประจำปี 2567 และคว้ารางวัลรองชนะเลิศอันดับที่ 1 กิจกรรมนี้ช่วยเจียระไนบุคลิกภาพ การวางท่าทาง และการส่งต่อพลังงานอารมณ์ไปยังผู้ชมจำนวนมาก อีกทั้งยังได้ฝึกการบริหารเวลาและการประสานงานในองค์กรขนาดใหญ่ ถือเป็นคุณสมบัติสำคัญของผู้ทำงานด้านสื่อสารมวลชน งานการประชาสัมพันธ์ (PR) งานบริหารจัดอีเวนต์ และนักสื่อสารหน้ากล้อง
+                    </p>
                 </div>
             </div>
 
-            <!-- กิจกรรมช่องที่ 5 -->
+            <!-- กิจกรรมที่ 5 -->
             <div class="work-card">
-                <img src="work5.jpg" alt="กิจกรรมที่ 5" class="work-img">
+                <img src="work5.jpg" alt="ผู้นำเชียร์ คณะสีม่วง 2568" class="work-img">
                 <div class="work-info">
-                    <span class="work-tag">🏆 Workshop & Event</span>
-                    <h3 class="work-title">การเข้าร่วมอบรม/กิจกรรมเบื้องหลัง</h3>
-                    <p class="work-desc">เข้าร่วมกิจกรรมการเรียนรู้สื่อนิเทศศาสตร์ อบรมการตัดต่อ และการทำงานเบื้องหลังร่วมกับทีม</p>
+                    <div class="tag-container">
+                        <span class="work-tag">📣 Cheerleader 2025</span>
+                        <span class="award-tag">🥈 รองชนะเลิศอันดับ 1</span>
+                    </div>
+                    <h3 class="work-title">5. ผู้นำเชียร์ คณะสีม่วง งานกีฬาสี (ปี 2568)</h3>
+                    <p class="work-desc">
+                        ปฏิบัติหน้าที่ผู้นำเชียร์คณะสีม่วงต่อเนื่องเป็นปีที่ 2 ในงานกีฬาสีประจำปี 2568 และได้รับรางวัลรองชนะเลิศอันดับที่ 1 กิจกรรมนี้ช่วยยกระดับทักษะความเป็นผู้นำ การเป็นพี่เลี้ยงคอยโค้ชและถ่ายทอดประสบการณ์ให้รุ่นน้อง (Mentorship) ตลอดจนทักษะการแก้ปัญหาเฉพาะหน้าในการจัดโชว์ ซึ่งทักษะการบริหารคน การคุมมาตรฐานงานโปรดักชัน และความยืดหยุ่นถือเป็นหัวใจสำคัญในการทำงานสายสื่อและเบื้องหลังงานผลิตสื่อทุกรูปแบบ
+                    </p>
+                </div>
+            </div>
+
+            <!-- กิจกรรมที่ 6 -->
+            <div class="work-card">
+                <img src="work6.jpg" alt="Open House วารสารศาสตร์ มธ." class="work-img">
+                <div class="work-info">
+                    <div class="tag-container">
+                        <span class="work-tag">🏛️ Open House Workshop</span>
+                    </div>
+                    <h3 class="work-title">6. Open House คณะวารสารศาสตร์ฯ ม.ธรรมศาสตร์</h3>
+                    <p class="work-desc">
+                        เข้าร่วมกิจกรรม Open House คณะวารสารศาสตร์และสื่อสารมวลชน มหาวิทยาลัยธรรมศาสตร์ ได้เข้าทำเวิร์กชอปทดลองปฏิบัติงานจริงในแต่ละสาขาวิชา กิจกรรมนี้ช่วยเปิดโลกทัศน์ให้เห็นภาพรวมของกระบวนการทำงานจริงในสายงานสื่อสารมวลชน ทั้งด้านภาพยนตร์ วารสารศาสตร์ และดิจิทัลมีเดีย ช่วยตอกย้ำความมุ่งมั่น แรงบันดาลใจ และความพร้อมในการเข้าศึกษาต่อในสายวิชานิเทศศาสตร์อย่างชัดเจนที่สุด
+                    </p>
                 </div>
             </div>
 
